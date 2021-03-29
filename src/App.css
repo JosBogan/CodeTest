@@ -35,11 +35,17 @@ thead {
 }
 
 tr {
-  height: 30px
+  height: 40px;
+  text-align: left;
+}
+
+td, th {
+  padding-left: 5px;
+  vertical-align: middle;
 }
 
 tr:nth-last-child(odd) {
-  background-color: #f5f5f5;
+  background-color: #f9f9f9;
 }
 
 .basket_total_section {

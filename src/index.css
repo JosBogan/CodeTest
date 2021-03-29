@@ -27,6 +27,10 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   border:none;
 }
 
+table {
+  table-layout: fixed;
+}
+
 button {
   border: none;
   color: #ffffff;

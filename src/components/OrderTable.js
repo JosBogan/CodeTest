@@ -56,6 +56,7 @@ const OrderTable = ({ products, setProducts }) => {
               <th>Price</th>
               <th>Quantity</th>
               <th>Cost</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
