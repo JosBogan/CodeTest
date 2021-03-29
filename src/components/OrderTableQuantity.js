@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 
-const OrderTableQuantity = ({ quantity, id, updateQuantity, checkQuantityBounds }) => {
+const OrderTableQuantity = ({ quantity, id, updateQuantity, checkQuantityBounds, quantityButtonInputController }) => {
+
+  const inputRef = useRef(null)
+
   return (
     <div>
+      {console.log('inputRef', inputRef)}
       <input  
         min="1" 
         max="10"
         type="number"
         value={quantity}
+        ref={inputRef}
         onBlur={checkQuantityBounds}
         data-id={id}
         name="inputControl"
@@ -17,13 +22,17 @@ const OrderTableQuantity = ({ quantity, id, updateQuantity, checkQuantityBounds 
         className="button button_decrement"
         name="decrement" 
         data-id={id} 
-        onClick={updateQuantity}>-
+        type="button"
+        onClick={(event) => quantityButtonInputController(event, inputRef)}>
+          -
         </button>
       <button 
         className="button button_increment"
         name="increment" 
         data-id={id} 
-        onClick={updateQuantity}>+
+        type="button"
+        onClick={(event) => quantityButtonInputController(event, inputRef)}>
+          +
         </button>
     </div>
   )

@@ -9,47 +9,33 @@ const OrderTable = ({ products, setProducts }) => {
   const checkQuantityBounds = (event) => {
     if (event.target.value === '') event.target.value = 1
     if (parseInt(event.target.value) > 10) event.target.value = 10
+    updateQuantity(event)
   }
 
+  const quantityButtonInputController = (event, inputRef) => {
+    switch (event.target.name) {
+      case 'increment':
+        inputRef.current.stepUp()
+        break
+      case 'decrement':
+        inputRef.current.stepDown()
+        break
+      default:
+        break
+    }
+  }
 
   const updateQuantity = (event) => {
-    console.log('changed')
     const updatedProducts = products.map(product => {
       if (product.id === parseInt(event.target.dataset.id)) {
-
-        let newQuantity
-
-        switch (event.target.name) {
-          case 'inputControl':
-            newQuantity = parseInt(event.target.value)
-            break
-          case 'increment':
-            if (product.quantity + 1 > 10) {
-              newQuantity = 10
-            } else {
-              newQuantity = product.quantity + 1
-            }
-            break
-          case 'decrement':
-            if (product.quantity - 1 < 1) {
-              newQuantity = 1
-            } else {
-              newQuantity = product.quantity - 1
-            }
-            break
-          default:
-            break
-        }
-
         return {
           ...product, 
-          quantity: newQuantity
+          quantity: parseInt(event.target.value)
         }
       } else {
         return {...product}
       }
     })
-    // const filteredProducts = updatedProducts.filter(product => product.quantity > 0)
     setProducts(updatedProducts)
   }
 
@@ -80,6 +66,7 @@ const OrderTable = ({ products, setProducts }) => {
                   quantity={product.quantity} 
                   id={product.id}
                   updateQuantity={updateQuantity}
+                  buttonInputController={quantityButtonInputController}
                   checkQuantityBounds={checkQuantityBounds}
                 />
               </td>

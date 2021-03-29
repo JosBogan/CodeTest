@@ -5,7 +5,8 @@ const OrderTableDelete = ({ id, deleteItem }) => {
   return (
     <button 
       className="button button_delete"
-      onClick={deleteItem} 
+      onClick={deleteItem}
+      type="button"
       data-id={id}>Delete
     </button>
   )
