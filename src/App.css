@@ -15,6 +15,7 @@
   text-align: center;
   padding-bottom: 20px;
   font-size: 2em;
+  font-weight: 500;
 }
 
 .basket_container {
@@ -61,7 +62,10 @@ tr:nth-last-child(odd) {
 
 .order_header {
   background-color: var(--accent);
-  margin-top: 0px;
+  margin: 0px;
+  padding: 5px 10px;
+  font-weight: 400;
+  font-size: 1.2em;
 }
 
 .button_decrement {
@@ -74,10 +78,25 @@ tr:nth-last-child(odd) {
 
 .button_delete {
   background-color: #ee3b2f;
+  padding: 7px 10px;
 }
 
 .button_submit {
   background-color: #52c1ca;
+}
+
+.quantity_row_container {
+  display: flex;
+}
+
+.increment_buttons_container {
+  margin-left: 10px;
+}
+
+.button_decrement, .button_increment {
+  height: 25px;
+  width: 25px;
+  margin: 0 2px;
 }
 
 .basket_vat, .basket_subtotal {
@@ -94,10 +113,13 @@ tr:nth-last-child(odd) {
   text-align: right;
 }
 
+button {
+  font-weight: 600;
+}
+
 .basket_form_submit_button {
   padding: 10px 30px;
   border-radius: 30px;
-  font-weight: 600;
 }
 
 button:disabled {

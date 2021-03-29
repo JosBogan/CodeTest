@@ -27,6 +27,7 @@ const OrderTable = ({ products, setProducts }) => {
   }
 
   const updateQuantity = ({ target }) => {
+    if (parseInt(target.value) > 10 || parseInt(target.value) < 0) return
     const updatedProducts = products.map(product => {
       if (product.id === parseInt(target.dataset.id)) {
         return {

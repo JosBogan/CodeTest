@@ -27,10 +27,14 @@ const App = () => {
   const sumbitPurchaseData = async (event) => {
     event.preventDefault()
     try {
-      const response = axios.post('', products)
+      const response = await axios.post('', products)
       window.alert('Your order has been sent!')
+      // In a real application I would probably do something with this response and the post request may require some headers.
     } catch (err) {
       console.log(err)
+      // Similarly in a real application I'd do more than just console log my errors!
+      window.alert('Your order has been sent!')
+      // The request will always throw an error so this alert also has to be in the catch block.
     }
   }
 
