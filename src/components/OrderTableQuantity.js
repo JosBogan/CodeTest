@@ -7,7 +7,6 @@ const OrderTableQuantity = ({ quantity, id, updateQuantity, checkQuantityBounds,
 
   return (
     <div>
-      {console.log('inputRef', inputRef)}
       <input  
         min="1" 
         max="10"
@@ -21,7 +20,7 @@ const OrderTableQuantity = ({ quantity, id, updateQuantity, checkQuantityBounds,
       <button 
         className="button button_decrement"
         name="decrement" 
-        data-id={id} 
+        // data-id={id} 
         type="button"
         onClick={(event) => quantityButtonInputController(event, inputRef)}>
           -
@@ -29,7 +28,7 @@ const OrderTableQuantity = ({ quantity, id, updateQuantity, checkQuantityBounds,
       <button 
         className="button button_increment"
         name="increment" 
-        data-id={id} 
+        // data-id={id} 
         type="button"
         onClick={(event) => quantityButtonInputController(event, inputRef)}>
           +

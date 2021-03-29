@@ -1,70 +1,16 @@
-# Getting Started with Create React App
+# Setup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* Either download the Zip or clone the repository.
+* Run `yarn && yarn init` in the project root.
+* Run `yarn start` in the project root.
 
-## Available Scripts
+# Process
 
-In the project directory, you can run:
+After reading through the instructions and looking at the provided image for this code test I first thought of what React components would make most sense to me as composition for the checkout basket. I ended up splitting the basket out by functinlity and so ended up with a header, order table and costing components. Because both the costing and order table components needed acess to the product data I had to store that state in the parent App component and pass it through as props to both of them. I also added a fake `id` key to the data to emulate what I'd expect real data to look like.
 
-### `yarn start`
+Both visually and functionally the list of products works well as a table so mapped through my data, using the table tags to create the list of Items. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+In a larger project I might have 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The most tricky part of this code test for me was the incrementing of the quantity using buttons. I had a couple of different variations, some of which condensed the input `onChange` function and the button `onClick` function. I decided however, that the code read better if they were seperated. Before settling on my final solution I also ran into problems as I initially attempted to modify the state directly with the increment buttons, allowing the value to increase past 10 and below 1. Using the `useRef` hook however, I found that modifying the input directly worked well and also seemed to reduce the oppertunity for user found edge-cases. I also ran into the issue that `stepUp` and `stepDown` don't automatically trigger the `onChange` event, so I had to run that function manually.
