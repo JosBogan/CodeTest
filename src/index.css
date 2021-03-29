@@ -15,12 +15,29 @@ code {
     monospace;
 }
 
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  border-collapse: collapse;
+  border:none;
+}
+
 button {
   border: none;
   color: #ffffff;
   border-radius: 2px;
   cursor: pointer;
   padding: 5px 5px;
+}
+
+input[type=number] {
+  border: 1px solid #cccccc;
+  border-radius: 0;
 }
 
 h1, h2 {

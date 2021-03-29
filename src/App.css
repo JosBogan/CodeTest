@@ -12,18 +12,26 @@
 
 .basket_header_title {
   border-bottom: 1px solid var(--accent);
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 2em;
 }
 
 .basket_container {
-
+  width: 60%
 }
 
 .order_products_table {
   width: 100%;
+  margin: 30px;
 }
 
-.tr:nth-child(odd) {
-  background-color: var(--accent);
+thead {
+  font-weight: 400;
+}
+
+tr:nth-last-child(odd) {
+  background-color: #f5f5f5;
 }
 
 .basket_total_section {
@@ -58,9 +66,14 @@
   background-color: #52c1ca;
 }
 
+.basket_vat, .basket_subtotal {
+  color: #b3bcc2;
+}
+
 .basket_total_row {
   display: flex;
   justify-content: space-between;
+  /* margin: 15px 0; */
 }
 
 .basket_form_submit {
