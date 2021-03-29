@@ -1,9 +1,9 @@
 import React from 'react'
 
 
-const OrderTableDelete = () => {
+const OrderTableDelete = ({ id, deleteItem }) => {
   return (
-    <button>Delete</button>
+    <button onClick={deleteItem} data-id={id}>Delete</button>
   )
 }
 

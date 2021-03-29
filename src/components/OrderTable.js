@@ -21,8 +21,23 @@ const OrderTable = () => {
   ])
 
   const updateQuantity = (event) => {
-    console.log(event.target.name)
-    console.log(event.target.dataset.id)
+    const updatedProducts = products.map(product => {
+      if (product.id === parseInt(event.target.dataset.id)) {
+        return {
+          ...product, 
+          quantity: event.target.name === 'increment' ? product.quantity+1 : product.quantity-1
+        }
+      } else {
+        return {...product}
+      }
+    })
+    const filteredProducts = updatedProducts.filter(product => product.quantity > 0)
+    setProducts(filteredProducts)
+  }
+
+  const deleteItem = (event) => {
+    const filteredProducts = products.filter(product => product.id !== parseInt(event.target.dataset.id))
+    setProducts(filteredProducts)
   }
 
   return (
@@ -51,7 +66,10 @@ const OrderTable = () => {
               </td>
               <td>£{(product.price * product.quantity).toFixed(2)}</td>
               <td>
-                <OrderTableDelete />
+                <OrderTableDelete
+                  deleteItem={deleteItem} 
+                  id={product.id}
+                />
               </td>
             </tr>
           ))}
