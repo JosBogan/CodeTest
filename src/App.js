@@ -11,16 +11,16 @@ const App = () => {
 
   const [products, setProducts] = useState([
     {
+      id: 0,
       name: 'Apple',
       price: 0.52,
-      quantity: 2,
-      id: 0
+      quantity: 2
     },
     {
+      id: 1,
       name: 'Banana',
       price: 0.67,
-      quantity: 3,
-      id: 1
+      quantity: 3
     }
   ])
 

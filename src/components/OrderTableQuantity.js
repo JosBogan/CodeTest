@@ -17,8 +17,9 @@ const OrderTableQuantity = ({ quantity, id, checkQuantityBounds, valueChange }) 
         onBlur={checkQuantityBounds}
         data-product-id={id}
         id="quantity"
-        onChange={valueChange}/>
-        {/* onChange={inputChange}/> */}
+        onChange={valueChange}
+      />
+
       <div className="increment_buttons_container">
         <button 
           className="button button_decrement"
