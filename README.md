@@ -1,8 +1,7 @@
 # Setup
  
 * Either download the Zip or clone the repository.
-* Run `yarn && yarn init` in the project root.
-* Run `yarn start` in the project root.
+* Run `yarn && yarn start` in the project root.
 * Open your preferred browser and head to http://localhost:3000/
  
 # Process

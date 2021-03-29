@@ -12,7 +12,6 @@ const OrderTableQuantity = ({ quantity, id, checkQuantityBounds, valueChange }) 
         max="10"
         type="number"
         value={quantity}
-        onInput={(event) => event.target.validity.valid ? '' : event.target.value = ''}
         ref={inputRef}
         onBlur={checkQuantityBounds}
         data-product-id={id}
