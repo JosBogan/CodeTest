@@ -29,7 +29,7 @@ const App = () => {
     try {
       const response = await axios.post('', products)
       window.alert('Your order has been sent!')
-      // In a real application I would probably do something with this response and the post request may require some headers.
+      // In a real application I would probably do something with this response and the request may require some headers.
     } catch (err) {
       console.log(err)
       // Similarly in a real application I'd do more than just console log my errors!

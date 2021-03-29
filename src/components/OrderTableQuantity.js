@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 
 
-const OrderTableQuantity = ({ quantity, id, updateQuantity, checkQuantityBounds, quantityButtonInputController }) => {
+const OrderTableQuantity = ({ quantity, id, checkQuantityBounds, valueChange }) => {
 
   const inputRef = useRef(null)
 
@@ -15,22 +15,27 @@ const OrderTableQuantity = ({ quantity, id, updateQuantity, checkQuantityBounds,
         onInput={(event) => event.target.validity.valid ? '' : event.target.value = ''}
         ref={inputRef}
         onBlur={checkQuantityBounds}
-        data-id={id}
-        name="inputControl"
-        onChange={updateQuantity}/>
+        data-product-id={id}
+        id="quantity"
+        onChange={valueChange}/>
+        {/* onChange={inputChange}/> */}
       <div className="increment_buttons_container">
         <button 
           className="button button_decrement"
           name="decrement" 
           type="button"
-          onClick={(event) => quantityButtonInputController(event, inputRef)}>
+          data-product-id={id}
+          data-value={-1}
+          onClick={(event) => valueChange(event, inputRef)}>
             -
         </button>
         <button 
           className="button button_increment"
           name="increment"
           type="button"
-          onClick={(event) => quantityButtonInputController(event, inputRef)}>
+          data-product-id={id}
+          data-value={1}
+          onClick={(event) => valueChange(event, inputRef)}>
             +
         </button>
       </div>

@@ -5,37 +5,28 @@ import OrderTableQuantity from './OrderTableQuantity'
 
 const OrderTable = ({ products, setProducts }) => {
 
-
   const checkQuantityBounds = ({ target }) => {
-    if (target.value === '') target.value = 1
-    if (parseInt(target.value) > 10) target.value = 10
-    updateQuantity({ target })
+    let newQuantity = target.value
+    if (target.value === '') newQuantity = 1
+    else if (parseInt(target.value) > 10) newQuantity = 10
+    updateQuantity(newQuantity, target.dataset.productId)
   }
 
-  const quantityButtonInputController = (event, inputRef) => {
-    switch (event.target.name) {
-      case 'increment':
-        inputRef.current.stepUp()
-        break
-      case 'decrement':
-        inputRef.current.stepDown()
-        break
-      default:
-        break
-    }
-    updateQuantity({ target: inputRef.current })
+  const valueChange = ({ target }, inputRef) => {
+    const newQuantity = !inputRef ? parseInt(target.value) : parseInt(inputRef.current.value) + parseInt(target.dataset.value)
+    if (newQuantity > 10 || (!inputRef && newQuantity < 0) || (!!inputRef && newQuantity < 1)) return
+    updateQuantity(newQuantity, target.dataset.productId)
   }
 
-  const updateQuantity = ({ target }) => {
-    if (parseInt(target.value) > 10 || parseInt(target.value) < 0) return
+  const updateQuantity = (newQuantity, id) => {
     const updatedProducts = products.map(product => {
-      if (product.id === parseInt(target.dataset.id)) {
+      if (product.id === parseInt(id)) {
         return {
           ...product, 
-          quantity: parseInt(target.value) || ''
+          quantity: parseInt(newQuantity) || ''
         }
       } else {
-        return {...product}
+        return { ...product }
       }
     })
     setProducts(updatedProducts)
@@ -69,8 +60,7 @@ const OrderTable = ({ products, setProducts }) => {
                   <OrderTableQuantity 
                     quantity={product.quantity} 
                     id={product.id}
-                    updateQuantity={updateQuantity}
-                    quantityButtonInputController={quantityButtonInputController}
+                    valueChange={valueChange}
                     checkQuantityBounds={checkQuantityBounds}
                   />
                 </td>

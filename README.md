@@ -3,6 +3,7 @@
 * Either download the Zip or clone the repository.
 * Run `yarn && yarn init` in the project root.
 * Run `yarn start` in the project root.
+* Open your preferred browser and head to http://localhost:3000/
  
 # Process
  
@@ -14,4 +15,6 @@ After building out the basic components I tackled the quantity and delete parts 
  
 Once all of the order table functionality was done, the section for sub/totals was relatively straightforward as any data modified in the table would update the `props` being passed into the cost calculations. I used `axios`
  
-For me the most interesting part of this code test was the incrementing of the quantity using buttons. I had a couple of different variations, one of which condensed the input `onChange` function and the button `onClick` into one function, another directly modified state. I decided however, that the code read better if they were seperated and and if the state was driven only by the value of the input. I also ran into the issue that `stepUp` and `stepDown` don't automatically trigger the `onChange` event, so I had to run that function manually and pass in the input that I'd stored with `useRef`. I also may have gone a bit overboard in my efforts to ensure that a user can't input a value of under 1 or over 10 as some of my initial tests gave the user the ability to type in any number, which dynamically changed the cost, causing potential issues.
+For me the most interesting part of this code test was the incrementing of the quantity using buttons. I had a couple of different variations, one of which condensed the input `onChange` function and the button `onClick` into one function, another called `stepUp` and `stepDown` on an input stored in `useRef`. I decided however, that the code read better if they were seperated and and for the buttons to directly modify state. 
+
+I also may have gone a bit overboard in my efforts to ensure that a user can't input a value of under 1 or over 10 as some of my initial versions gave the user the ability to type in any number. Whilst I had an `onBlur` to ensured the quantity always ended up between 1-10, becuase my input event was `onChange`, the user could still type any number they wanted and see the cost either skyrocket or go negative as long as they didn't click out of the input.
