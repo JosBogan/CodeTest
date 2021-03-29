@@ -1,10 +1,18 @@
 import React from 'react'
 
 
-const OrderTableQuantity = ({ quantity, id, updateQuantity }) => {
+const OrderTableQuantity = ({ quantity, id, updateQuantity, checkQuantityBounds }) => {
   return (
     <div>
-      <input readOnly type="number" value={quantity}/>
+      <input  
+        min="1" 
+        max="10"
+        type="number"
+        value={quantity}
+        onBlur={checkQuantityBounds}
+        data-id={id}
+        name="inputControl"
+        onChange={updateQuantity}/>
       <button 
         className="button button_decrement"
         name="decrement" 

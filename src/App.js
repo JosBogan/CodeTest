@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 import './App.css'
 
@@ -23,14 +24,24 @@ const App = () => {
     }
   ])
 
+  const sumbitPurchaseData = async (event) => {
+    event.preventDefault()
+    try {
+      const response = axios.post('', products)
+      window.alert('Your order has been sent!')
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
 
   return (
     <section className="page_container">
-      <div className="basket_container">
+      <form className="basket_container" onSubmit={sumbitPurchaseData}>
         <BasketHeader />
         <OrderTable products={products} setProducts={setProducts}/>
         <BasketTotal products={products}/>
-      </div>
+      </form>
     </section>
   )
 }

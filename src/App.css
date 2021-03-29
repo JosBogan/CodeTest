@@ -42,6 +42,11 @@
   background-color: #52c1ca;
 }
 
+.basket_total_row {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* .button {
   border: none;
 } */
