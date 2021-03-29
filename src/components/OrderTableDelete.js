@@ -3,7 +3,11 @@ import React from 'react'
 
 const OrderTableDelete = ({ id, deleteItem }) => {
   return (
-    <button onClick={deleteItem} data-id={id}>Delete</button>
+    <button 
+      className="button button_delete"
+      onClick={deleteItem} 
+      data-id={id}>Delete
+    </button>
   )
 }
 

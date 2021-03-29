@@ -25,3 +25,23 @@
   background-color: #ebf0f1;
   margin-top: 0px;
 }
+
+.button_decrement {
+  background-color: #ee9600;
+}
+
+.button_increment {
+  background-color: #4dc09a;
+}
+
+.button_delete {
+  background-color: #ee3b2f;
+}
+
+.button_submit {
+  background-color: #52c1ca;
+}
+
+/* .button {
+  border: none;
+} */

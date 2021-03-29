@@ -5,21 +5,6 @@ import OrderTableQuantity from './OrderTableQuantity'
 
 const OrderTable = ({ products, setProducts }) => {
 
-  // const [products, setProducts] = useState([
-  //   {
-  //     name: 'Apple',
-  //     price: 0.52,
-  //     quantity: 2,
-  //     id: 0
-  //   },
-  //   {
-  //     name: 'Banana',
-  //     price: 0.67,
-  //     quantity: 3,
-  //     id: 1
-  //   }
-  // ])
-
   const updateQuantity = (event) => {
     const updatedProducts = products.map(product => {
       if (product.id === parseInt(event.target.dataset.id)) {
