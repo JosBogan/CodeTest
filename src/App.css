@@ -21,13 +21,21 @@
   width: 60%
 }
 
+.order_products_table_container {
+  padding: 30px 20px;
+}
+
 .order_products_table {
   width: 100%;
-  margin: 30px;
+  /* margin: 30px; */
 }
 
 thead {
   font-weight: 400;
+}
+
+tr {
+  height: 30px
 }
 
 tr:nth-last-child(odd) {
@@ -86,6 +94,7 @@ tr:nth-last-child(odd) {
   font-weight: 600;
 }
 
-/* .button {
-  border: none;
-} */
+button:disabled {
+  background-color: #afafaf;
+  cursor:not-allowed;
+}

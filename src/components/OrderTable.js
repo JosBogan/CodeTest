@@ -48,40 +48,42 @@ const OrderTable = ({ products, setProducts }) => {
   return (
     <div className="order_container">
       <h2 className="order_header">Review Your Order</h2>
-      <table className="order_products_table">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Cost</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map(product => (
-            <tr key={product.name}>
-              <td>{product.name}</td>
-              <td>£{product.price}</td>
-              <td>
-                <OrderTableQuantity 
-                  quantity={product.quantity} 
-                  id={product.id}
-                  updateQuantity={updateQuantity}
-                  quantityButtonInputController={quantityButtonInputController}
-                  checkQuantityBounds={checkQuantityBounds}
-                />
-              </td>
-              <td>£{(product.price * product.quantity).toFixed(2)}</td>
-              <td>
-                <OrderTableDelete
-                  deleteItem={deleteItem} 
-                  id={product.id}
-                />
-              </td>
+      <div className="order_products_table_container">
+        <table className="order_products_table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Cost</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {products.map(product => (
+              <tr key={product.name}>
+                <td>{product.name}</td>
+                <td>£{product.price}</td>
+                <td>
+                  <OrderTableQuantity 
+                    quantity={product.quantity} 
+                    id={product.id}
+                    updateQuantity={updateQuantity}
+                    quantityButtonInputController={quantityButtonInputController}
+                    checkQuantityBounds={checkQuantityBounds}
+                  />
+                </td>
+                <td>£{(product.price * product.quantity).toFixed(2)}</td>
+                <td>
+                  <OrderTableDelete
+                    deleteItem={deleteItem} 
+                    id={product.id}
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }
