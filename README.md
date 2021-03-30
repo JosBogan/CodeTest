@@ -3,6 +3,10 @@
 * Either download the Zip or clone the repository.
 * Run `yarn && yarn start` in the project root.
 * Open your preferred browser and head to http://localhost:3000/
+
+# Foreword
+
+Thank you very much for looking over my code test!
  
 # Process
  
