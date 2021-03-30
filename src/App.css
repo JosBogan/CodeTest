@@ -72,8 +72,12 @@ tr:nth-last-child(odd) {
 .basket_total_row {
   display: flex;
   justify-content: space-between;
-  /* margin: 15px 0; */
 }
+
+.basket_total_row:first-of-type {
+margin-bottom: 20px;
+}
+
 
 .basket_form_submit {
   text-align: right;

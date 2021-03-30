@@ -15,17 +15,17 @@ In terms of the styling, I initially built it all out in vanilla CSS, but I want
  
 # Reflections
  
-For me the most interesting part of this code test was the incrementing of the quantity using buttons. I went through a couple of different iterations, one of which condensed the input `valueChange` function and the `updateQuantity` into one function, another called `stepUp` and `stepDown` on the input for the buttons. I decided however that the code read better if they were seperated and and for the buttons to directly modify state rather than the input.
+For me one the most interesting part of this code test was the incrementing of the quantity using buttons. I went through a couple of different iterations, one of which condensed the input `valueChange` function and the `updateQuantity` into one function, another called `stepUp` and `stepDown` on the input for the buttons. I decided however that the code read better if they were seperated and and for the buttons to directly modify state rather than the input.
  
 I also thought about different ways of structuring the data, potentially separating the quantity and  product into different states, linking them via an id. I also considered rearranging my state so that I could store/send both the product data and costs as part of the post request however the solution I ended up with was both the most simple and made most sense to me.
  
-In hindsight I may have gone a bit overboard in my efforts to ensure that a user can't input a value under 1 or over 10 as some of my initial versions gave the user the ability to type in any number. Whilst I have an `onBlur` to ensured the quantity always ended up between 1-10, because my input event was `onChange`, the user could still type any number they wanted and see the cost either skyrocket or go negative as long as they didn't click out of the input.
+In hindsight I may have gone a bit overboard in my efforts to ensure that a user can't input a value under 1 or over 10 for the product quantity as some of my initial versions gave the user the ability to type in any number. Whilst I have an `onBlur` to ensured the quantity always ended up between 1-10, because my input event was `onChange`, the user could still type any number they wanted (as i found out the `max` and `min` attributes on an input don't limit the user's ability to type numbers outside the range) and see the cost either skyrocket or go negative as long as they didn't click out of the input.
  
-Although I've barely scratched the surface of styled-components I can already tell it's an incredibly versatile and powerful library. Whilst my implementation works I'm not sure if it is actually any good or is representative of industry standards. It's definitely a library I'll be using in the future!
+Although I've barely scratched the surface of styled-components I can already tell it's an incredibly versatile and powerful library. Whilst my implementation works I'm not sure if it is actually any good or is representative of industry standards. It's definitely a library I'm keen to learn more about and will be using in the future!
  
 # Going Forward
  
-If I were to take this code test further I'd probably do some more research on styled-components best practices/how to best use it in large scale applications and try to replicate that. I think the other main thing I'd attempt would be some unit testing.
+In terms of next steps for this code test, I'd probably do some more research on styled-components best practices/how to best use it in large scale applications and try to replicate for the whole task. I'd also also give a more responsive or mobile version a shot. I think the other main thing I'd attempt would be some unit testing.
  
  
 ### Thank you very much for looking over my code test!
