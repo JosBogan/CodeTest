@@ -5,7 +5,7 @@
  
 # Process
 
-After reading through the instructions and looking at the provided image I first decided what components made the most sense. I initialising a React app with `create-react-app` and split up the basket out by purpose and ended up with a header, order table and costing component.
+After reading through the instructions and looking at the provided image I first decided what components made the most sense. I initialised a React app with `create-react-app` and split up the basket out by purpose and ended up with a header, order table and costing component.
  
 Both the costing and order table components needed access to the product data I had to store that state in the parent App component and pass it through as `props` to both of them. I also added a fake `id` key to the data to emulate what I'd expect real data to look like.
 
