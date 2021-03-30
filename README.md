@@ -26,7 +26,7 @@ I also thought about different ways of structuring the data, potentially separat
  
 In hindsight I may have gone a bit overboard in my efforts to ensure that a user can't input a value under 1 or over 10 for the product quantity as some of my initial versions gave the user the ability to type in any number. Whilst I have an `onBlur` to ensured the quantity always ended up between 1-10, because my input event was `onChange`, the user could still type any number they wanted (as i found out the `max` and `min` attributes on an input don't limit the user's ability to type numbers outside the range) and see the cost either skyrocket or go negative as long as they didn't click out of the input.
  
-Although I've barely scratched the surface of styled-components I can already tell it's an incredibly versatile and powerful library. Whilst my implementation works I'm not sure if it is actually any good or is representative of industry standards. It's definitely a library I'm keen to learn more about and will be using in the future!
+Although I've barely scratched the surface of styled-components I can already tell it's an incredibly versatile and powerful library. Whilst my implementation works, I'm not sure if it is actually any good or is representative of industry standards. For example I don't know if it's considered bad pracitce to combine a traditional css file with styled components as I've done here. It's definitely a library I'm keen to learn more about and will be using in the future!
  
 # Going Forward
  
