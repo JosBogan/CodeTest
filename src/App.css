@@ -2,13 +2,6 @@
   --accent: #ebf0f1;
 }
 
-.page_container {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .basket_header_title {
   border-bottom: 1px solid var(--accent);
@@ -16,10 +9,6 @@
   padding-bottom: 20px;
   font-size: 2em;
   font-weight: 500;
-}
-
-.basket_container {
-  width: 60%
 }
 
 .order_products_table_container {
@@ -67,22 +56,6 @@ tr:nth-last-child(odd) {
   font-size: 1.2em;
 }
 
-.button_decrement {
-  background-color: #ee9600;
-}
-
-.button_increment {
-  background-color: #4dc09a;
-}
-
-.button_delete {
-  background-color: #ee3b2f;
-  padding: 7px 10px;
-}
-
-.button_submit {
-  background-color: #52c1ca;
-}
 
 .quantity_row_container {
   display: flex;
@@ -90,12 +63,6 @@ tr:nth-last-child(odd) {
 
 .increment_buttons_container {
   margin-left: 10px;
-}
-
-.button_decrement, .button_increment {
-  height: 25px;
-  width: 25px;
-  margin: 0 2px;
 }
 
 .basket_vat, .basket_subtotal {
@@ -110,18 +77,4 @@ tr:nth-last-child(odd) {
 
 .basket_form_submit {
   text-align: right;
-}
-
-button {
-  font-weight: 600;
-}
-
-.basket_form_submit_button {
-  padding: 10px 30px;
-  border-radius: 30px;
-}
-
-button:disabled {
-  background-color: #afafaf;
-  cursor:not-allowed;
 }

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
+import { StyledButton } from '../styled'
+
 const BasketTotal = ({ products }) => {
 
   const [subTotalCost, setTotalCost] = useState(0)
@@ -48,11 +50,12 @@ const BasketTotal = ({ products }) => {
         </div>
       </div>
       <div className="basket_total_section basket_form_submit">
-        <button 
+        <StyledButton 
           type="submit" 
-          className="button_submit basket_form_submit_button"
+          cssType="submit"
+          colour="teal"
           disabled={!products.length ? true : false}
-        >Buy Now</button>
+        >Buy Now</StyledButton>
       </div>
     </div>
   )

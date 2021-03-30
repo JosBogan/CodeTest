@@ -2,12 +2,34 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 
+import { ThemeProvider } from 'styled-components'
+
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
+
+import { StyledPageContainer, StyledForm } from './styled' 
 
 import BasketHeader from './components/BasketHeader'
 import BasketTotal from './components/BasketTotal'
 import OrderTable from './components/OrderTable'
+
+const theme = {
+  green: '#4dc09a',
+  orange: '#ee9600',
+  red: '#ee3b2f',
+  teal: '#52c1ca',
+  accent: '#ebf0f1'
+}
+
+const notify = () => toast.success('Your order has been sent!', {
+  position: 'top-right',
+  autoClose: 3000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  })
 
 const App = () => {
 
@@ -26,17 +48,6 @@ const App = () => {
     }
   ])
 
-  const notify = () => toast.success('Your order has been sent!', {
-    position: 'top-right',
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    })
-
-
   const sumbitPurchaseData = async (event) => {
     event.preventDefault()
     try {
@@ -51,16 +62,19 @@ const App = () => {
     }
   }
 
-
   return (
-    <section className="page_container">
-      <ToastContainer />
-      <form className="basket_container" onSubmit={sumbitPurchaseData}>
-        <BasketHeader />
-        <OrderTable products={products} setProducts={setProducts}/>
-        <BasketTotal products={products}/>
-      </form>
-    </section>
+    <StyledPageContainer>
+      <ToastContainer/>
+      <ThemeProvider theme={theme}>
+        <StyledForm onSubmit={sumbitPurchaseData}>
+
+          <BasketHeader />
+          <OrderTable products={products} setProducts={setProducts}/>
+          <BasketTotal products={products}/>
+
+        </StyledForm>
+      </ThemeProvider>
+    </StyledPageContainer>
   )
 }
 
