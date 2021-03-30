@@ -31,37 +31,6 @@ td:nth-child(4) {
   width: 80px;
 }
 
-button {
-  border: none;
-  color: #ffffff;
-  border-radius: 3px;
-  cursor: pointer;
-  padding: 5px 5px;
-  font-weight: 600;
-}
-
-/* button:disabled {
-  background-color: #afafaf;
-  cursor:not-allowed;
-} */
-
-input[type=number] {
-  border: 1px solid #cccccc;
-  border-radius: 0;
-  text-align: center;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
 h1, h2 {
   font-family: 'Open Sans';
 }

@@ -59,10 +59,11 @@ export const StyledQuantityInput = styled.input.attrs(props => ({
   border: 1px solid #cccccc;
   border-radius: 0;
   text-align: center;
-  &::-webkit-outer-spin-button
+  -moz-appearance: textfield;
+  &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
+  }
 `
 
