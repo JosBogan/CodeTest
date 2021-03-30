@@ -4,11 +4,16 @@
 * Open your preferred browser and head to http://localhost:3000/
  
 # Process
-After reading through the instructions and looking at the provided image I first decided what components made the most sense. I split up the basket out by purpose and so ended up with a header, order table and costing component.
+
+After reading through the instructions and looking at the provided image I first decided what components made the most sense. After initialising a React app with `create-react-app` I split up the basket out by purpose and ended up with a header, order table and costing component.
  
 Both the costing and order table components needed access to the product data I had to store that state in the parent App component and pass it through as `props` to both of them. I also added a fake `id` key to the data to emulate what I'd expect real data to look like.
-Both visually and functionally the list of products works well as a table so I mapped through my data, using the table tags to create the table of items. I haven't used tables very often, so whilst they were a bit fiddly at first, it was fun playing around with them.
+
+Both visually and functionally the list of products works well as a table so I mapped through my data, using the table tags to create the table of items. I haven't used tables very often, so whilst 
+they were a bit fiddly at first, it was fun playing around with them.
+
 After building out the basic components I tackled the quantity and delete parts of the order table, separating them out into their own components. For the delete button I filtered the products array to not contain the item whose `id` I'd passed in and then set it back to state. For the quantity controls I mapped over the products array and returned either a spread copy of the same product, or if the `id` matched, a spread copy with the quantity key updated.
+
 Once all of the order table functionality was done, the section for sub/totals was relatively straightforward as any data modified in the table would update the `props` being passed into the cost calculations. I used the `axios` library for the mock `POST` request as it is simple, clean and easy to use.
  
 In terms of the styling, I initially built it all out in vanilla CSS, but I wanted to also give using the styled-components library a shot so I converted some of what I already had. I spent some time reading up on it, and whilst I didn't convert the whole project, I managed to implement it on some of the more potentially reusable and complex components such as the buttons and input.
